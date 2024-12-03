@@ -86,6 +86,7 @@ app.get("/notifications", (req, res) => {
 })
 
 app.get("/", (req , res) =>{
+    console.log("Hello World");
     res.send("Hello World");
 })
 
