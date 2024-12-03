@@ -1,7 +1,10 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-app.use(cors());
+
+app.use(express.json());
+app.use(cors({origin : "*"}));
+
 
 const todos = [{
   id: 1,
@@ -85,9 +88,11 @@ app.get("/notifications", (req, res) => {
 
 })
 
-app.get("/", (req , res) =>{
+app.get("/", (req, res) => {
     console.log("Hello World");
     res.send("Hello World");
 })
 
-app.listen(8080)
+app.listen(8080, () => {
+    console.log("Listening on port 8080");
+})
